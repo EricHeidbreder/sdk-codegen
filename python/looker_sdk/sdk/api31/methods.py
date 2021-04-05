@@ -4720,26 +4720,6 @@ class Looker31SDK(api_methods.APIMethods):
         assert isinstance(response, models.LookmlModelExplore)
         return response
 
-    def update_lookml_model_explore(
-        self,
-        # Name of lookml model.
-        lookml_model_name: str,
-        # Name of explore.
-        explore_name: str,
-        body: models.WriteLookmlModelExplore,
-        transport_options: Optional[transport.TransportOptions] = None,
-    ) -> models.LookmlModelExplore:
-        """Update LookML Model Explore"""
-        lookml_model_name = self.encode_path_param(lookml_model_name)
-        explore_name = self.encode_path_param(explore_name)
-        response = self.patch(
-            f"/lookml_models/{lookml_model_name}/explores/{explore_name}",
-            models.LookmlModelExplore,
-            body=body,
-            transport_options=transport_options,
-        )
-        assert isinstance(response, models.LookmlModelExplore)
-        return response
     # endregion
 
     # region Project: Manage Projects
